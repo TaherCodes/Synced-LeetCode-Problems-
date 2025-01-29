@@ -1,0 +1,57 @@
+class Solution {
+    public boolean isValid(String s) {
+        if (s.isEmpty()) return true;
+
+        // Base case: If length is odd, it cannot be balanced
+        if (s.length() % 2 != 0) return false;
+
+        // Replace valid pairs iteratively until nothing changes
+        while (s.contains("()") || s.contains("{}") || s.contains("[]")) {
+            s = s.replace("()", "").replace("{}", "").replace("[]", "");
+        }
+
+        return s.isEmpty(); // If all brackets are matched, it should be empty
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       /* int round = 0; int curly = 0; int square = 0;
+        for(char ch: s.toCharArray()){
+            if(ch == '(') round++;
+            else if(ch == ')'){
+                if(round == 0) return false;
+                round--;
+            }
+            else if(ch == '{') curly++;
+            else if(ch == '}'){
+                if(curly == 0) return false;
+                curly--;
+            }
+            else if(ch == '[') square++;
+            else if(ch == ']'){
+                if(square == 0) return false;
+                square--;
+            }
+        }
+        return round == 0 && curly == 0 && square == 0;
+    */
+    
+}
+
